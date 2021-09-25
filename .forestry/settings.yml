@@ -9,7 +9,6 @@ sections:
   label: Posts
   create: all
   match: "**/*"
-sections:
 - type: directory
   path: authors
   label: Authors
