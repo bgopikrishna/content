@@ -6,12 +6,14 @@ email: address@yoursite.com
 twitter: https://twitter.com/_bgopikrishna
 linkedin: https://www.linkedin.com/bgopikrishna
 github: https://github.com/bgopikrishna
----
 
+---
 Hey, I'm **Gopi Krishna** currently working as an SDE at [ElevateHQ](https://Elevate.so). Either I'll be building something or watching cricket or reading a novel.
 
 ## Knowledgeable In
- 
+
+## ![](/uploads/undraw_freelancer_re_irh4.svg)
+
 **Programming** - JavaScript, TypeScript
 
 **Frontend** -Angular, React JS, HTML5, CSS3, SASS
@@ -28,12 +30,3 @@ Hey, I'm **Gopi Krishna** currently working as an SDE at [ElevateHQ](https://Ele
 * **LinkedIn** - [bgopikrishna](https://twitter.com/_bgopikrishna)
 * **GitHub** - [bgopikrishna](https://github.com/bgopikrishna)
 * **Twitter** - [_bgopikrishna](https://www.linkedin.com/in/bgopikrishna)
-
-
-
-
-
-
-
-
-
