@@ -20,3 +20,8 @@ fields:
 - type: textarea
   name: coverImageCredits
   label: coverImageCredits
+- name: draft
+  type: boolean
+  label: Draft
+  hidden: false
+  default: true
