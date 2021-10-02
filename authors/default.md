@@ -14,7 +14,7 @@ Hey, I'm **Gopi Krishna** currently working as an SDE at [ElevateHQ](https://Ele
 
 ## ![](/uploads/undraw_freelancer_re_irh4.svg)
 
-**Programming** - JavaScript, TypeScript, Little Go
+**Programming** - JavaScript, TypeScript, Little GoLang
 
 **Frontend** -Angular, React JS, HTML5, CSS3, SASS
 
@@ -22,7 +22,7 @@ Hey, I'm **Gopi Krishna** currently working as an SDE at [ElevateHQ](https://Ele
 
 **Other Libraries and Tools** - Webpack JS, Redux JS, BootStrap, Materialize CSS, Bulma CSS, Git, Gatsby JS
 
-**Currently learning** - Micro-services with Node
+**Currently learning** - Micro-services with NodeJS
 
 ## You can reach out to me via
 
