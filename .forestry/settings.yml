@@ -2,7 +2,7 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: ''
-webhook_url: 
+webhook_url: https://api.vercel.com/v1/integrations/deploy/prj_NgXBLv4o8X0LOvFkUFQfLdMWNcMu/w1NOTAjmVg
 sections:
 - type: directory
   path: blog
