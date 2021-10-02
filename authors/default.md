@@ -2,7 +2,7 @@
 name: Gopi Krishna
 avatar: https://avatars1.githubusercontent.com/bgopikrishna
 occupation: SDE at ElevateHQ
-email: address@yoursite.com
+email: b.gopikrishna@outlook.in
 twitter: https://twitter.com/_bgopikrishna
 linkedin: https://www.linkedin.com/bgopikrishna
 github: https://github.com/bgopikrishna
