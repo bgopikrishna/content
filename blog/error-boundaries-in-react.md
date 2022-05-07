@@ -51,11 +51,13 @@ Enough talk, Let’s get our hands dirty.
 
 Open your terminal and run
 
-    npx create-react-app hero-powers
+   ```sh
+   npx create-react-app hero-powers
+   ```
     
 
 Now replace the contents of `src/App.js` with the following code.
-
+```javascript
     import { useState } from 'react';
     
     const HEROES = [
@@ -111,11 +113,13 @@ Now replace the contents of `src/App.js` with the following code.
     }
     
     export default App;
-    
+  ```  
 
 Start the application using
 
-    npm start
+   ```sh
+   npm start
+   ```
     
 
 If you look at the code written, we have an `App` component and a `HeroDetails` component.
@@ -132,7 +136,8 @@ Create a file with the name `ErrorBoundary.js`
 
 Copy the following contents and paste them there.
 
-    import { Component } from "react";
+   ```javascript
+   import { Component } from "react";
     
     export default class ErrorBoundary extends Component {
       state = {
@@ -165,7 +170,7 @@ Copy the following contents and paste them there.
         return children;
       }
     }
-    
+  ```
 
 If you look at the code, the error boundary we created has two props
 
@@ -181,7 +186,7 @@ In the `componentDidCatch` lifecycle method, we can log the error to the error s
 We can also see the whole component stack from where the error originated using `errorInfo.componentStack` .
 
 Now let’s see that in action, wrap the `HeroDetails` with an `ErrorBoundary`
-
+```javascript
     <ErrorBoundary
       fallback={
         <div className='message is-danger'>
@@ -191,7 +196,7 @@ Now let’s see that in action, wrap the `HeroDetails` with an `ErrorBoundary`
     >
       <HeroDetails heroData={selectedHero} />
     </ErrorBoundary>;
-    
+ ```
 
 Now on selecting `Bambasto` again instead of the page going completely blank, we can see the fallback UI
 
