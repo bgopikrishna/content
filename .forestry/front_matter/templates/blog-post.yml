@@ -25,3 +25,5 @@ fields:
   label: Draft
   hidden: false
   default: true
+pages:
+- blog/error-boundaries-in-react.md
