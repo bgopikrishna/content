@@ -186,6 +186,7 @@ In the `componentDidCatch` lifecycle method, we can log the error to the error s
 We can also see the whole component stack from where the error originated using `errorInfo.componentStack` .
 
 Now let’s see that in action, wrap the `HeroDetails` with an `ErrorBoundary`
+
 ```javascript
     <ErrorBoundary
       fallback={
