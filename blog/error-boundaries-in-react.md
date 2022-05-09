@@ -1,22 +1,22 @@
 ---
 draft: true
 date: 2022-05-17T00:00:00+05:30
-title: Error Boundaries in React
+title: How to create error boundaries in React
 tags:
 - React
-description: Desc Goes Here
+description: Error boundaries are the react components that help us to catch the errors
+  in the render phase. By using Error Boundaries we can also show a fallback UI if
+  something goes wrong (Like an uncaught error).
 cover: "/uploads/cover-1.png"
 coverImageCredits: ''
 
 ---
-# Error Boundaries in React
-
 ## Objectives
 
 * What are error boundaries in react?
-* How to use them
+* How to use them?
+* Limitations
 * A simple demo
-* Usage with Sentry
 
 ## What are error boundaries?
 
@@ -213,9 +213,9 @@ These are some limitations to Error Boundaries. Errors happened due to the follo
 
 ## Demo
 
-<iframe 
-       src="https://codesandbox.io/embed/react-error-boundaries-5nzju5?			fontsize=14&hidenavigation=1&theme=dark&view=preview"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="React Error Boundaries"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" />
+<iframe
+src="https://codesandbox.io/embed/react-error-boundaries-5nzju5?			fontsize=14&hidenavigation=1&theme=dark&view=preview"
+style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+title="React Error Boundaries"
+allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" />
