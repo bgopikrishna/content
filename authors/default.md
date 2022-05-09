@@ -20,13 +20,13 @@ Hey, I'm **Gopi Krishna** currently working as an SDE at [ElevateHQ](https://Ele
 
 **Backend** - Node, Express, MySQL
 
-**Other Libraries and Tools** - Webpack JS, Redux JS, BootStrap, Materialize CSS, Bulma CSS, Git, Gatsby JS
+**Other Libraries and Tools** - Webpack, Next JS, Gatsby and other dot js libraries.
 
-**Currently learning** - Micro-services with NodeJS
+**Currently learning** - Databases and stuff
 
 ## You can reach out to me via
 
 * **Email** - [b.gopikrishna@outlook.in](b.gopikrishna@outlook.in)
-* **LinkedIn** - [bgopikrishna](https://twitter.com/_bgopikrishna)
+* **LinkedIn** - [bgopikrishna](https://www.linkedin.com/in/bgopikrishna)
 * **GitHub** - [bgopikrishna](https://github.com/bgopikrishna)
-* **Twitter** - [_bgopikrishna](https://www.linkedin.com/in/bgopikrishna)
+* **Twitter** - [_bgopikrishna](https://twitter.com/_bgopikrishna)
