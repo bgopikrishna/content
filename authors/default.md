@@ -8,11 +8,11 @@ linkedin: https://www.linkedin.com/bgopikrishna
 github: https://github.com/bgopikrishna
 
 ---
-Hey, I'm **Gopi Krishna** currently working as an SDE at [ElevateHQ](https://Elevate.so). Either I'll be building something or watching cricket or reading a novel.
+Hey, I'm **Gopi Krishna,** currently working as an SDE at [ElevateHQ](https://Elevate.so). Either I'll be building something or watching cricket or reading a novel.
 
 ## Knowledgeable In
 
-## ![](/uploads/undraw_freelancer_re_irh4.svg)
+## ![Illustration of a person (assume gopikrishna.dev) coding in his laptop](/uploads/undraw_freelancer_re_irh4.svg)
 
 **Programming** - JavaScript, TypeScript, Little GoLang
 
