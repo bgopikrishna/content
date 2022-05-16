@@ -27,3 +27,4 @@ fields:
   default: true
 pages:
 - blog/error-boundaries-in-react.md
+- blog/getting-started-with-webpack.md
