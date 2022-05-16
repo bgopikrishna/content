@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2022-05-17T00:00:00+05:30
+date: 2022-06-07T00:00:00+05:30
 title: How to use error boundaries in react?
 tags:
 - React
@@ -15,11 +15,11 @@ coverImageCredits: ''
 
 Error boundaries are unique react components that help us catch the errors in a React Application. Using Error Boundaries, we can also show a fallback UI if something goes wrong (Like an uncaught error).
 
-In plain English, Error boundaries are like try-catch blocks for the UI with some catches (We'll see them in the latter part of this article).
+In plain English, Error boundaries are like try-catch blocks for the UI with some limitations (We'll see them in the latter part of this article).
 
 For example, if a component failed to render content due to some case not being handled or you are trying to access a key in the object which doesn’t exist etc.
 
-If it’s wrapped with an Error boundary when the error happens, we can render a fallback UI instead of the application going completely blank.
+If it’s wrapped with an Error boundary when the error happens, we can render a fallback UI instead of the application crashing.
 
 We'll see this in action during the implementation of an example application.
 
@@ -28,9 +28,9 @@ We'll see this in action during the implementation of an example application.
 To create an Error Boundary component, it should be
 
 * A Class Component
-* It should implement either (or both) of the lifecycle methods
-  * `getDerivedStateFromError()` - This static lifecycle method allows us to update the state when an error happens.
-  * `componentDidCatch()` - This is another life cycle method that we can use to log the error information to application monitoring services like sentry etc.
+* It should implement either (or both) of the lifecycle methods.
+  * `getDerivedStateFromError()` - This static lifecycle method allows us to update the state when an error happens. Using this, we can show the fallback UI.
+  * `componentDidCatch()` - This is another life cycle method that we can use to log the error information to application monitoring services like Prometheus or sentry.
 
 ## Example
 
@@ -42,13 +42,13 @@ It looks something like this. You will find the completed application at the end
 
 Enough talk, Let’s get our hands dirty.
 
-We are going to use `create-react-app `boilerplate. Open your terminal and run.
+We are going to use `create-react-app`boilerplate. Open your terminal and run.
 
 ```sh
 npx create-react-app hero-powers
 ```
 
-Now navigate to the folder and replace the contents of `src/App.js` with the following code.
+Now navigate to the folder. Using your code editor, replace the contents of `src/App.js` with the following code.
 
 ```javascript
     import { useState } from 'react';
@@ -116,7 +116,7 @@ npm start
 
 If you look at the code written, we have a `App` component and a `HeroDetails` component.
 
-`App` Component renders the list of superheroes. Whereas `HeroDetails` renders the powers of a selected superhero.
+`App` component renders the list of superheroes and `HeroDetails`. `HeroDetails` component renders the powers of a selected superhero.
 
 To keep things simple, we are storing the hero's data in a variable called `HEROES`. But in a real-world application, this data might be coming from an API or other external sources.
 
@@ -164,14 +164,14 @@ import { Component } from "react";
 
 If you look at the code, the error boundary we created has two props
 
-1. `fallback` - Fallback UI to show if the component crashed
+1. `fallback` - Fallback UI to show when the component crashes
 2. `children` - The component which needs to wrap with an error boundary
 
 Whenever a crash happens in our application, it gets caught by the nearest error boundary, and the fallback UI is rendered
 
 `getDerivedStateFromError`  lifecycle method that allows us to update the state to `hasError: true`
 
-Whereas with the `componentDidCatch` lifecycle method, we can log the error to the error service. Currently, we are just logging it into the console. But ideally, should log errors to some application monitoring service like sentry.
+Whereas with the `componentDidCatch` lifecycle method, we can log the error to the error service. Currently, we are just logging it into the console. But ideally, we should log errors to some application monitoring service.
 
 We can also see the whole component stack from where the error originated using `errorInfo.componentStack` .
 
@@ -189,20 +189,20 @@ Now let’s see that in action. Wrap the `HeroDetails` with an `ErrorBoundary`
     </ErrorBoundary>;
 ```
 
-Now on selecting `Bambasto` again. Now instead of the application going completely blank, we can see the fallback UI
+Now on selecting `Bambasto` again. Instead of the application getting crashed, we can see the fallback UI.
 
 ![Error boundary with fallback UI](/uploads/screenshot-2022-04-14-at-10-56-27-pm.png)
 
 ## Limitations
 
-These are some limitations to Error Boundaries. Errors happened due to the following cases won't be caught.
+Remember there are some limitations to Error Boundaries. The Error Boundaries won't catch errors that happened for the following reasons.
 
-* Event handlers (e.g., `onClick`, `onChange`, `onBlur` etc.)
-* `setTimeout` or `requestAnimationFramecallbacks`
-* Server-side rendering (SSR)
+* In event handlers (e.g., `onClick`, `onChange`, `onBlur` etc.)
+* In `setTimeout` , `setInterval` or `requestAnimationFrame` callbacks
+* During Server-side rendering (SSR)
 * And errors caused by the error boundary itself
 
-## Demo
+## Codesandbox demo
 
 <iframe
 src="https://codesandbox.io/embed/react-error-boundaries-5nzju5?			fontsize=14&hidenavigation=1&theme=dark&view=preview"
