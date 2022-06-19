@@ -42,7 +42,7 @@ It looks something like this. You will find the completed application at the end
 
 Enough talk, Let’s get our hands dirty.
 
-We are going to use `create-react-app`boilerplate. Open your terminal and run.
+We are going to use `create-react-app` boilerplate. Open your terminal and run.
 
 ```sh
 npx create-react-app hero-powers
