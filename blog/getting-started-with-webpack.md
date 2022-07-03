@@ -5,7 +5,10 @@ title: Getting started with webpack
 tags:
 - build tools
 - webpack
-description: A gentle introduction to webpack and its friends.
+description: Webpack is a module bundler for JavaScript applications. In plain English,
+  webpack creates a dependency graph of all files (using imports/require statements,
+  plugins, loaders, etc.). Using this dependency graph, webpack outputs the bundled
+  code.
 cover: "/uploads/getting-started-with-weba.png"
 coverImageCredits: ''
 
@@ -190,4 +193,27 @@ Also, install plugins for CSS and HTML
 npm install css-loader style-loader html-webpack-plugin
 ```
 
-Now let's create the following files.
+Now let's create the files.
+
+```shell
+touch webpack.config.js
+```
+
+```shell
+mkdir src # creates src folder
+cd src
+touch index.html app.js
+```
+
+Directory structure looks like this
+
+```
+├── src
+│   ├── app.js
+│   ├── index.html
+├── README.md
+├── package-lock.json
+├── package.json
+└── webpack.config.js
+```
+
