@@ -36,7 +36,7 @@ The first part of this article covers basic webpack concepts. In the second part
 
 ## What is webpack?
 
-Webpack is a module bundler for JavaScript applications. In plain English, webpack creates a dependency graph of all files (using imports/require statements, plugins, loaders, etc.). Using this dependency graph, webpack outputs the bundled code.
+Webpack is a module bundler for JavaScript applications. In plain English, webpack creates a dependency graph of all files (using imports/require statements, plugins, loaders, etc.). Using the dependency graph generated, webpack outputs the bundled code.
 
 ![Webpack key steps illustation - webpack for beginners](/uploads/webpackbundle.png "Webpack illustration")
 
@@ -61,11 +61,13 @@ An entry point is a JavaScript file that serves as a starting point for webpack 
 From webpack >= 4, Out of the box `src/index.js` serves as the entry point.
 
 But you can configure the entry point by using `entry` property in the config file, and you can also have multiple entry points.
+
 ```js
     module.exports = {
       entry: 'src/app.js', //Custom entry point
     };
 ```
+
 ### Output
 
 Output is the path where webpack will bundle all the dependencies and your app code into single or multiple files.
@@ -73,6 +75,7 @@ Output is the path where webpack will bundle all the dependencies and your app c
 From webpack >= 4, Out of the box `dist/main.js` serves as the output path.
 
 Like entry point, you can also configure output using the `output` property.
+
 ```js
     module.exports = {
       entry: 'src/app.js', //Custom entry point,
@@ -82,6 +85,7 @@ Like entry point, you can also configure output using the `output` property.
       },
     };
 ```
+
 ### Loaders
 
 Loaders are kind of like extensions that help webpack process other types of files like CSS, images, markdown files, etc.
@@ -89,6 +93,7 @@ Loaders are kind of like extensions that help webpack process other types of fil
 Loaders convert these files into JavaScript modules. These converted modules will be used by webpack.
 
 For example, with the help of `ts-loader` you can transpile typescript files.
+
 ```js
      module: {
         rules: [
@@ -99,14 +104,16 @@ For example, with the help of `ts-loader` you can transpile typescript files.
         ],
       },
 ```
+
 Loaders have two properties:
 
-1. `test` - Used to identify the file types which need to be transformed.
+1. `test` - Used to identify the file types which need to be transformed to javascript modules.
 2. `use` - User to determine what loader to use on this file type.
 
 > If you want to use multiple loaders on a single file, you can pass `use` property an array `['loader-1', 'loader-2']`.
 
-But keep in mind that loaders will be applied from **right to left** so that loader-2 will be used first, then loader-1.
+But keep in mind that loaders will be applied from **right to left** so that loader-2 will be applied first, then loader-1.
+
 ```js
      module: {
         rules: [
@@ -117,6 +124,7 @@ But keep in mind that loaders will be applied from **right to left** so that loa
         ],
       },
 ```
+
 In the above code,
 
 1. `css-loader` - Adds support to import CSS files directly into a javascript file.
@@ -139,6 +147,7 @@ You can install it with npm.
 ```shell
      npm install html-webpack-plugin --save-dev
 ```
+
 And add it config using `plugins` property.
 
 ```js
@@ -156,11 +165,11 @@ And add it config using `plugins` property.
 
 ### Mode
 
-Mode allows webpack to use built-in optimizations based on the environment. You can set the mode as 
+Mode allows webpack to use built-in optimizations based on the environment. You can set the mode as
 
 1. production (default)
 2. development
-3. none 
+3. none
 
 ```js
 {
@@ -175,10 +184,12 @@ Mode allows webpack to use built-in optimizations based on the environment. You 
 Let's build a simple app that calculates the age.
 
 Create a folder with whatever name you want. Here, I'm calling it **age-calculator-webpack**.
+
 ```shell
     mkdir age-calculator-webpack
     cd age-calculator-webpack
 ```
+
 After that run `npm init -y` to initialize the project
 
 Now let's install webpack.
@@ -205,15 +216,12 @@ cd src
 touch index.html app.js
 ```
 
-Directory structure looks like this
+The directory structure looks like this
 
-```
-├── src
-│   ├── app.js
-│   ├── index.html
-├── README.md
-├── package-lock.json
-├── package.json
-└── webpack.config.js
-```
-
+    ├── src
+    │   ├── app.js
+    │   ├── index.html
+    ├── README.md
+    ├── package-lock.json
+    ├── package.json
+    └── webpack.config.js
