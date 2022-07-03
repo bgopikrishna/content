@@ -58,11 +58,11 @@ An entry point is a JavaScript file that serves as a starting point for webpack 
 From webpack >= 4, Out of the box `src/index.js` serves as the entry point.
 
 But you can configure the entry point by using `entry` property in the config file, and you can also have multiple entry points.
-
+```js
     module.exports = {
       entry: 'src/app.js', //Custom entry point
     };
-
+```
 ### Output
 
 Output is the path where webpack will bundle all the dependencies and your app code into single or multiple files.
@@ -70,7 +70,7 @@ Output is the path where webpack will bundle all the dependencies and your app c
 From webpack >= 4, Out of the box `dist/main.js` serves as the output path.
 
 Like entry point, you can also configure output using the `output` property.
-
+```js
     module.exports = {
       entry: 'src/app.js', //Custom entry point,
       output: {
@@ -78,7 +78,7 @@ Like entry point, you can also configure output using the `output` property.
         path: path.resolve(__dirname, 'build'), //custom output point
       },
     };
-
+```
 ### Loaders
 
 Loaders are kind of like extensions that help webpack process other types of files like CSS, images, markdown files, etc.
@@ -86,7 +86,7 @@ Loaders are kind of like extensions that help webpack process other types of fil
 Loaders convert these files into JavaScript modules. These converted modules will be used by webpack.
 
 For example, with the help of `ts-loader` you can transpile typescript files.
-
+```js
      module: {
         rules: [
           {
@@ -95,7 +95,7 @@ For example, with the help of `ts-loader` you can transpile typescript files.
           },
         ],
       },
-
+```
 Loaders have two properties:
 
 1. `test` - Used to identify the file types which need to be transformed.
@@ -104,7 +104,7 @@ Loaders have two properties:
 > If you want to use multiple loaders on a single file, you can pass `use` property an array `['loader-1', 'loader-2']`.
 
 But keep in mind that loaders will be applied from **right to left** so that loader-2 will be used first, then loader-1.
-
+```js
      module: {
         rules: [
           {
@@ -113,7 +113,7 @@ But keep in mind that loaders will be applied from **right to left** so that loa
           },
         ],
       },
-
+```
 In the above code,
 
 1. `css-loader` - Adds support to import CSS files directly into a javascript file.
@@ -129,13 +129,16 @@ To keep things simple, let's have a look at [HtmlWebpackPlugin.](https://webpack
 
 Basically what `HtmlWebpackPlugin` will do was, it creates an HTML template and add the script tags which point to bundled JS.
 
-You can install it by running it.
+![](/uploads/htmlwebpack-plugin.png)
 
+You can install it with npm.
+
+```shell
      npm install html-webpack-plugin --save-dev
-
+```
 And add it config using `plugins` property.
 
-```jsx
+```js
 {
 	...,
       plugins: [
@@ -150,15 +153,21 @@ And add it config using `plugins` property.
 
 ### Mode
 
+Mode allows webpack to use built-in optimizations based on the environment. You can set the mode as 
+
+1. production (default)
+2. development
+3. none 
+
 ## Example App
 
 Let's build a simple app that calculates the age.
 
 Create a folder with whatever name you want. Here, I'm calling it **age-calculator-webpack**.
-
+```shell
     mkdir age-calculator-webpack
     cd age-calculator-webpack
-
+```
 After that run `npm init -y` to initialize the project
 
 Now let's install webpack.
@@ -173,4 +182,4 @@ Also, install plugins for CSS and HTML
 npm install css-loader style-loader html-webpack-plugin
 ```
 
-Now lets the following files.
+Now let's create the following files.
