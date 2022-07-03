@@ -6,7 +6,7 @@ tags:
 - build tools
 - webpack
 description: A gentle introduction to webpack and its friends.
-cover: ''
+cover: "/uploads/getting-started-with-weba.png"
 coverImageCredits: ''
 
 ---
