@@ -159,6 +159,14 @@ Mode allows webpack to use built-in optimizations based on the environment. You 
 2. development
 3. none 
 
+```js
+{
+	...,
+   		mode: "development"   
+    ...,
+}
+```
+
 ## Example App
 
 Let's build a simple app that calculates the age.
