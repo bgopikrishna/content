@@ -17,9 +17,9 @@ Error boundaries are unique react components that help us catch the errors in a 
 
 In plain English, Error boundaries are like try-catch blocks for the UI with some limitations (We'll see them in the latter part of this article).
 
-For example, if a component failed to render content due to some case not being handled or you are trying to access a key in the object which doesn’t exist etc.
+For example, if a component failed to render content due to some case not being handled or you are trying to access a key in the object which doesn't exist etc.
 
-If it’s wrapped with an Error boundary when the error happens, we can render a fallback UI instead of the application crashing.
+If it's wrapped with an Error boundary when the error happens, we can render a fallback UI instead of the application crashing.
 
 We'll see this in action during the implementation of an example application.
 
@@ -30,19 +30,19 @@ To create an Error Boundary component, it should be
 * A Class Component
 * It should implement either (or both) of the lifecycle methods.
   * `getDerivedStateFromError()` - This static lifecycle method allows us to update the state when an error happens. Using this, we can show the fallback UI.
-  * `componentDidCatch()` - This is another life cycle method that we can use to log the error information to application monitoring services like Prometheus or sentry.
+  * `componentDidCatch()` - This is another life cycle method we can use to log the error information to application monitoring services like Prometheus or sentry.
 
 ## Example
 
-We will build a simple application that shows a list of superheroes and their powers. On selecting a particular hero, we’re going to show his superpowers.
+We will build a simple application that shows a list of superheroes and their powers. On selecting a particular hero, we're going to show his superpowers.
 
 It looks something like this. You will find the completed application at the end of this article.
 
 ![React Application](/uploads/screenshot-2022-04-13-at-9-56-28-am.png)
 
-Enough talk, Let’s get our hands dirty.
+Enough talk, Let's get our hands dirty.
 
-We are going to use `create-react-app` boilerplate. Open your terminal and run.
+We are going to use `create-react-app`. Open your terminal and run.
 
 ```sh
 npx create-react-app hero-powers
@@ -116,11 +116,11 @@ npm start
 
 If you look at the code written, we have a `App` component and a `HeroDetails` component.
 
-`App` component renders the list of superheroes and `HeroDetails`. `HeroDetails` component renders the powers of a selected superhero.
+`App` the Component renders the list of superheroes and `HeroDetails`. `HeroDetails` The Component renders the powers of a selected superhero.
 
 To keep things simple, we are storing the hero's data in a variable called `HEROES`. But in a real-world application, this data might be coming from an API or other external sources.
 
-Now, if you observe, when selecting `Bambasto` the application is getting crashed and going blank. If you look at the code, For  `Bambasto` the powers are `null` (check `HEROES` variable). We did that intentionally to simulate the error.
+Now, if you observe, when selecting `Bambasto` , the application is getting crashed and going blank. If you look at the code, For  `Bambasto` the powers are `null` (check `HEROES` variable). We did that intentionally to simulate the error.
 
 Create a file with the name `ErrorBoundary.js`
 
@@ -169,13 +169,13 @@ If you look at the code, the error boundary we created has two props
 
 Whenever a crash happens in our application, it gets caught by the nearest error boundary, and the fallback UI is rendered
 
-`getDerivedStateFromError`  lifecycle method that allows us to update the state to `hasError: true`
+`getDerivedStateFromError`  lifecycle method allows us to update the state to `hasError: true`
 
 Whereas with the `componentDidCatch` lifecycle method, we can log the error to the error service. Currently, we are just logging it into the console. But ideally, we should log errors to some application monitoring service.
 
 We can also see the whole component stack from where the error originated using `errorInfo.componentStack` .
 
-Now let’s see that in action. Wrap the `HeroDetails` with an `ErrorBoundary`
+Now let's see that in action. Wrap the `HeroDetails` with an `ErrorBoundary`
 
 ```javascript
     <ErrorBoundary
@@ -195,7 +195,7 @@ Now on selecting `Bambasto` again. Instead of the application getting crashed, w
 
 ## Limitations
 
-Remember there are some limitations to Error Boundaries. The Error Boundaries won't catch errors that happened for the following reasons.
+Remember, there are some limitations to Error Boundaries. The Error Boundaries won't catch errors that happen for the following reasons.
 
 * In event handlers (e.g., `onClick`, `onChange`, `onBlur` etc.)
 * In `setTimeout` , `setInterval` or `requestAnimationFrame` callbacks
