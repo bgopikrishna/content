@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2022-07-04T00:00:00+05:30
+date: 2022-10-24T00:00:00+05:30
 title: Getting started with webpack
 tags:
 - build tools
@@ -348,7 +348,7 @@ npm install webpack-dev-server --save-dev
 
 Now add webpack dev server config inside `webpack.config.js` with the `devServer` property.
 
-```javascript
+```javascript {24-27}
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -389,7 +389,7 @@ Add command for stating dev server in `package.json`
 
 `webpack serve` starts the dev server on port number 3000 (defined in the config)
 
-```json
+```json {9}
 {
   "name": "webpack-5-tutorial",
   "version": "1.0.0",
@@ -501,7 +501,7 @@ As discussed earlier,
 
 Now import the CSS file in `src/app.js`
 
-```javascript
+```javascript {1}
 import './styles.css'
 
 console.log('Hello from webpack')
@@ -517,7 +517,7 @@ Let's add the age calculation logic to the app.
 
 In `src/app.js`
 
-```javascript
+```javascript {3-23}
 import './styles.css'
 
 const dateInputEl = document.getElementById('dob');
