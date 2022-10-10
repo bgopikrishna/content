@@ -261,7 +261,7 @@ Now let's test the configuration.
 
 Let's add a simple console statement in `src/app.js`
 
-```javascript
+```javascript {1}
 console.log('Hello from webpack!');
 ```
 
@@ -298,7 +298,7 @@ Now create an html file `src/index.html` and paste the following contents.
 
 Let's add the `HtmlWebpackPlugin` plugin in the webpack config. Then we can go through the contents of the `src/index.html` file.
 
-```javascript {1,3-4}
+```javascript {2,3-4}
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -591,7 +591,7 @@ npm run install date-fns --save
 
 Now in `src/utils.js` replace the logic with date-fns functions
 
-```javascript {1} {5-9}
+```javascript {1, 5-9}
 import { formatDuration, intervalToDuration } from 'date-fns';
 
 
