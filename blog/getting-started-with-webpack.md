@@ -110,7 +110,7 @@ Loaders have two properties:
 1. `test` - Used to identify the file types which need to be transformed to javascript modules.
 2. `Use` - User to determine what loader to use on this file type.
 
-> If you want to use multiple loaders on a single file, you can pass the `use` property to an array `['loader-1', 'loader-2']`.
+> If you want to use multiple loaders on a single file, you can pass the `use` property an array `['loader-1', 'loader-2']`.
 
 But keep in mind that loaders will be applied from **right to left** so that loader-2 will be applied first, then loader-1.
 
@@ -125,7 +125,7 @@ But keep in mind that loaders will be applied from **right to left** so that loa
       },
 ```
 
-In the above code,
+In the above code, `css-loader` will be applied first and then `style-loader`.
 
 1. `css-loader` - Adds support to import CSS files directly into a javascript file.
 2. `style-loader` - Used to inject the styles generated from \`css-loader into the DOM.
