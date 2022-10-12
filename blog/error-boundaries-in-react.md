@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2022-10-17T00:00:00+05:30
+date: 2022-10-25T00:00:00+05:30
 title: How to use error boundaries in react?
 tags:
 - React
