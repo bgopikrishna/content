@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2022-10-24T00:00:00+05:30
+date: 2022-11-08T00:00:00+05:30
 title: Getting started with webpack
 tags:
 - build tools
@@ -13,15 +13,6 @@ cover: "/uploads/getting-started-with-weba.png"
 coverImageCredits: ''
 
 ---
-## Objectives
-
-1. What is webpack?
-2. What's the advantage of it?
-3. How to use webpack?
-4. What are webpack loaders?
-5. What are webpack plugins?
-6. How to create multiple configurations?
-
 ## Introduction
 
 So you might have used create react app or angular-CLI to generate the boilerplate for your application.
@@ -110,7 +101,7 @@ Loaders have two properties:
 1. `test` - Used to identify the file types which need to be transformed to javascript modules.
 2. `Use` - User to determine what loader to use on this file type.
 
-> If you want to use multiple loaders on a single file, you can pass the `use` property an array `['loader-1', 'loader-2']`.
+> If you want to use multiple loaders on a single file, you can pass the `use` property to an array `['loader-1', 'loader-2']`.
 
 But keep in mind that loaders will be applied from **right to left** so that loader-2 will be applied first, then loader-1.
 
@@ -148,7 +139,7 @@ You can install it with npm.
      npm install html-webpack-plugin --save-dev
 ```
 
-And add it config using `plugins` property.
+And add it config using the `plugins` property.
 
 ```javascript
 {
@@ -324,7 +315,7 @@ We're passing two options to `HtmlWebpackPlugin.`
 * `title` - Name of the template
 * `template` - path to the template
 
-Now rerun npm run build. If you observe inside the `build` directory, two files are created.
+Now rerun the npm run build. If you observe inside the `build` directory, two files are created.
 
 ```sh
 build
@@ -553,7 +544,7 @@ It looks something like this.
 
 #### Using third-party libraries and modules
 
-Now let's move the `calcAge` function into a new file called `src/utils.js`, So that we can reuse it in other places as well.
+Now let's move the `calcAge` function into a new file called `src/utils.js` So that we can reuse it in other places.
 
 ```javascript
 export function calcAge(dob) {
@@ -583,13 +574,13 @@ formEl.addEventListener('submit', (event) => {
 })
 ```
 
-Currently, we are showing age in the only number of days. For better readability, let's use the [date-fns](https://date-fns.org/) library. To install it, run
+Currently, we are showing age in the only number of days. For better readability, let's use the [date-fns](https://date-fns.org/) library. To install it, run.
 
 ```shell
 npm run install date-fns --save
 ```
 
-Now in `src/utils.js` replace the logic with date-fns functions
+Now in `src/utils.js,` replace the logic with functions imported from the `date-fns` library.
 
 ```javascript {1, 5-9}
 import { formatDuration, intervalToDuration } from 'date-fns';
@@ -610,6 +601,6 @@ The result will look something like this now.
 
 ## Conclusion
 
-***
+So far, we have seen how to configure a basic webpack application with plugins, loaders, and third-party libraries. In upcoming articles, we will cover advanced concepts like code-splitting, HMR, source map configurations, and also setting up a react application using webpack.
 
- Place Holder ---
+GitHub Repo - [https://github.com/bgopikrishna/webpack-tutorial/tree/v5/part-1](https://github.com/bgopikrishna/webpack-tutorial/tree/v5/part-1 "https://github.com/bgopikrishna/webpack-tutorial/tree/v5/part-1")
