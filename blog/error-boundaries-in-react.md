@@ -7,7 +7,7 @@ tags:
 description: Error boundaries are the react components that help us to catch errors
   in the render phase. By using Error Boundaries we can also show a fallback UI if
   something goes wrong (Like an uncaught error).
-cover: "/uploads/cover-1.png"
+cover: "/uploads/screenshot-2022-10-25-at-11-41-22-am.png"
 coverImageCredits: ''
 
 ---
