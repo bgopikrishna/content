@@ -1,10 +1,10 @@
 ---
-draft: true
-date: 2022-10-25T00:00:00+05:30
+draft: false
+date: 2022-10-25T10:30:00+05:30
 title: How to use error boundaries in react?
 tags:
 - React
-description: Error boundaries are the react components that help us to catch the errors
+description: Error boundaries are the react components that help us to catch errors
   in the render phase. By using Error Boundaries we can also show a fallback UI if
   something goes wrong (Like an uncaught error).
 cover: "/uploads/cover-1.png"
