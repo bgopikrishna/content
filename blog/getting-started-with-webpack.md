@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2022-11-08T00:00:00+05:30
+date: 2022-11-10T00:00:00+05:30
 title: Getting started with webpack
 tags:
 - build tools
@@ -15,13 +15,11 @@ coverImageCredits: ''
 ---
 ## Introduction
 
-So you might have used create react app or angular-CLI to generate the boilerplate for your application.
+So you might have used create react app or angular-cli to generate the boilerplate for your application. Even though these tools use webpack under the hood, they abstract most of the configuration for you.
 
-Even though these tools use webpack under the hood, they abstract most of the configuration for you.
+But sometimes, depending on the requirements, you might have to create a custom configuration from scratch or customize the existing configuration. So let's try to create a webpack application and understand its concepts.
 
-But sometimes, depending on the requirements, you might have to customize this configuration. So it's better to have a little understanding of how things work under the hood of these.
-
-This article is part one of the webpack series. In this, we go over basic webpack concepts. In the next one, we will go over some advanced concepts like code-splitting, HMR, source map configurations, etc.
+This article is part one of the webpack series. In this, we go over basic webpack concepts. In the next one, we will go over some advanced concepts like code-splitting, multiple configurations, source map configurations, etc.
 
 The first part of this article covers basic webpack concepts. In the second part, we'll build a simple application with everything we learned.
 
@@ -31,7 +29,7 @@ Webpack is a module bundler for JavaScript applications. In plain English, webpa
 
 ![Webpack key steps illustation - webpack for beginners](/uploads/webpackbundle.png "Webpack illustration")
 
-Webpack treats every file or asset as a module. Out of the box, webpack can only process JavaScript files (ES Modules, CommonJS modules, AMD Modules).
+Webpack treats every file or asset as a module. Out of the box, webpack only supports JavaScript files (ES Modules, CommonJS modules, AMD Modules).
 
 But we can extend it to other file types like CSS, images, etc., with the help of loaders and plugins. Which we will be looking at later in this article.
 
@@ -79,11 +77,11 @@ You can also configure output using the output property like an entry point.
 
 ### Loaders
 
-Loaders are kind of like extensions that help webpack process other types of files like CSS, images, markdown files, etc.
+Loaders are extensions that help webpack process other types of files like CSS, images, markdown files, etc.
 
 Loaders convert these files into JavaScript modules. These converted modules will be used by webpack.
 
-For example, with the help of a `ts-loader`, you can transpile typescript files.
+For example, with the help of a, you can transpile typescript files.
 
 ```javascript
      module: {
@@ -327,7 +325,7 @@ Open the `build/index.html` file in your browser and open the console. You will 
 
 ![hello world using webpack](/uploads/screenshot-2022-07-07-at-9-42-24-pm.png)
 
-#### Adding webpack dev server for faster development
+#### Adding a webpack dev server for faster development
 
 Running `npm run build` whenever the code change would be very tedious. So to speed up the development, we can use the [webpack dev server](https://webpack.js.org/configuration/dev-server/). The Webpack dev server is static (based on express.js) and supports live reloading.
 
@@ -574,7 +572,7 @@ formEl.addEventListener('submit', (event) => {
 })
 ```
 
-Currently, we are showing age in the only number of days. For better readability, let's use the [date-fns](https://date-fns.org/) library. To install it, run.
+Currently, we are showing age in the only number of days. For better readability, let's use a function from the [date-fns](https://date-fns.org/) library. To install it, run.
 
 ```shell
 npm run install date-fns --save
@@ -601,6 +599,6 @@ The result will look something like this now.
 
 ## Conclusion
 
-So far, we have seen how to configure a basic webpack application with plugins, loaders, and third-party libraries. In upcoming articles, we will cover advanced concepts like code-splitting, HMR, source map configurations, and also setting up a react application using webpack.
+So far, we have seen how to configure a basic webpack application with plugins, loaders, and third-party libraries. In upcoming articles, we will try to cover some advanced concepts and set up a react application using webpack.
 
 GitHub Repo - [https://github.com/bgopikrishna/webpack-tutorial/tree/v5/part-1](https://github.com/bgopikrishna/webpack-tutorial/tree/v5/part-1 "https://github.com/bgopikrishna/webpack-tutorial/tree/v5/part-1")
