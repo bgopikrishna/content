@@ -193,7 +193,7 @@ Also, install plugins for CSS and HTML
 npm install css-loader style-loader html-webpack-plugin
 ```
 
- Let's create the files.
+Let's create the files.
 
 ```sh
 touch webpack.config.js
@@ -246,7 +246,7 @@ Add the `webpack` command in `package.json` for bundling the code.
 ...
 ```
 
- We can now test the configuration by adding a simple console statement in `src/app.js`
+We can now test the configuration by adding a simple console statement in `src/app.js`
 
 ```javascript {1}
 console.log('Hello from webpack!');
@@ -530,7 +530,7 @@ function calcAge(dob) {
 }
 ```
 
-To keep things simple, we will not go over each function in detail.
+We will not go over each function in detail to keep things simple.
 
 We have a form with an event listener of the type `submit`. Whenever the user submits the form with his date of birth, we will calculate the age using `calcAge` the function. And render the result inside a `div` with id. `result`.
 
