@@ -15,9 +15,9 @@ coverImageCredits: ''
 ---
 ## Introduction
 
-So you might have used create react app or angular-cli to generate the boilerplate for your application. Even though these tools use webpack under the hood, they abstract most of the configuration for you.
+You might have used create react app or angular-cli to generate the boilerplate for your application. Even though these tools use webpack under the hood, they abstract most of the configuration for you.
 
-But sometimes, depending on the requirements, you might have to create a custom configuration from scratch or customize the existing configuration. So let's try to create a webpack application and understand its concepts.
+But sometimes, depending on the requirements, you might have to create a custom configuration from scratch or customize the existing configuration. This is where understanding webpack or any other similar tool helps. So let's try to create a webpack application and understand its concepts.
 
 This article is part one of the webpack series. In this, we go over basic webpack concepts. In the next one, we will go over some advanced concepts like code-splitting, multiple configurations, source map configurations, etc.
 
@@ -81,7 +81,7 @@ Loaders are extensions that help webpack process other types of files like CSS, 
 
 Loaders convert these files into JavaScript modules. These converted modules will be used by webpack.
 
-For example, with the help of a, you can transpile typescript files.
+For example, with the help of [ts-loader](https://webpack.js.org/guides/typescript/), you can transpile typescript files.
 
 ```javascript
      module: {
@@ -97,9 +97,9 @@ For example, with the help of a, you can transpile typescript files.
 Loaders have two properties:
 
 1. `test` - Used to identify the file types which need to be transformed to javascript modules.
-2. `Use` - User to determine what loader to use on this file type.
+2. `Use` - Used to determine what loader to use on this file type.
 
-> If you want to use multiple loaders on a single file, you can pass the `use` property to an array `['loader-1', 'loader-2']`.
+> If you want to use multiple loaders on a single file type, you can pass the `use` property an array `['loader-1', 'loader-2']`.
 
 But keep in mind that loaders will be applied from **right to left** so that loader-2 will be applied first, then loader-1.
 
@@ -117,7 +117,7 @@ But keep in mind that loaders will be applied from **right to left** so that loa
 In the above code, `css-loader` will be applied first and then `style-loader`.
 
 1. `css-loader` - Adds support to import CSS files directly into a javascript file.
-2. `style-loader` - Used to inject the styles generated from \`css-loader into the DOM.
+2. `style-loader` - Used to inject the styles generated from \`CSS-loader into the DOM.
 
 ### Plugins
 
@@ -154,7 +154,7 @@ And add it config using the `plugins` property.
 
 ### Mode
 
-Mode allows webpack to use built-in optimizations based on the environment. You can set the mode as
+Mode allows webpack to use built-in optimizations based on the environment. For example, if you set the mode to `production` it minifies  the output cod.e You can set the mode as
 
 1. production (default)
 2. development
@@ -193,7 +193,7 @@ Also, install plugins for CSS and HTML
 npm install css-loader style-loader html-webpack-plugin
 ```
 
-Now let's create the files.
+ Let's create the files.
 
 ```sh
 touch webpack.config.js
@@ -246,9 +246,7 @@ Add the `webpack` command in `package.json` for bundling the code.
 ...
 ```
 
-Now let's test the configuration.
-
-Let's add a simple console statement in `src/app.js`
+ We can now test the configuration by adding a simple console statement in `src/app.js`
 
 ```javascript {1}
 console.log('Hello from webpack!');
@@ -285,7 +283,7 @@ Now create an html file `src/index.html` and paste the following contents.
 </html>
 ```
 
-Let's add the `HtmlWebpackPlugin` plugin in the webpack config. Then we can go through the contents of the `src/index.html` file.
+Now add the `HtmlWebpackPlugin` plugin in the webpack config. Then we can go through the contents of the `src/index.html` file.
 
 ```javascript {2,3-4}
 
@@ -327,7 +325,7 @@ Open the `build/index.html` file in your browser and open the console. You will 
 
 #### Adding a webpack dev server for faster development
 
-Running `npm run build` whenever the code change would be very tedious. So to speed up the development, we can use the [webpack dev server](https://webpack.js.org/configuration/dev-server/). The Webpack dev server is static (based on express.js) and supports live reloading.
+Running `npm run build` whenever the code changes would be very tedious. So to speed up the development, we can use the [webpack dev server](https://webpack.js.org/configuration/dev-server/). The Webpack dev server is a static server (based on express.js) and supports live reloading.
 
 Installing the webpack dev server by running
 
@@ -502,7 +500,7 @@ If you reload the application, it should look something like this with styles ap
 
 #### Final app
 
-Let's add the age calculation logic to the app.
+Add the age calculation logic to the app.
 
 In `src/app.js`
 
@@ -532,7 +530,7 @@ function calcAge(dob) {
 }
 ```
 
-We will not go over each function in detail to keep things simple.
+to keep things simple, we will not go over each function in detail.
 
 We have a form with an event listener of the type `submit`. Whenever the user submits the form with his date of birth, we will calculate the age using `calcAge` the function. And render the result inside a `div` with id. `result`.
 
