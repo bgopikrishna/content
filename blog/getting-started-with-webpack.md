@@ -1,7 +1,7 @@
 ---
 draft: true
-date: 2022-11-10T00:00:00+05:30
-title: Getting started with webpack
+date: 2022-11-16T00:00:00+05:30
+title: Getting started with webpack - Tutorial for absolute beginners.
 tags:
 - build tools
 - webpack
