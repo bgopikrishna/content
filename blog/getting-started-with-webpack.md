@@ -154,7 +154,7 @@ And add it config using the `plugins` property.
 
 ### Mode
 
-Mode allows webpack to use built-in optimizations based on the environment. For example, if you set the mode to `production` it minifies  the output cod.e You can set the mode as
+Mode allows webpack to use built-in optimizations based on the environment. For example, if you set the mode to `production` it minifies the output code. You can set the mode as
 
 1. production (default)
 2. development
@@ -530,7 +530,7 @@ function calcAge(dob) {
 }
 ```
 
-to keep things simple, we will not go over each function in detail.
+To keep things simple, we will not go over each function in detail.
 
 We have a form with an event listener of the type `submit`. Whenever the user submits the form with his date of birth, we will calculate the age using `calcAge` the function. And render the result inside a `div` with id. `result`.
 
