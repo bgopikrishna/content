@@ -26,6 +26,6 @@ I'm **Gopi Krishna,** currently working as an SDE at [ElevateHQ](https://Elevate
 
 ## You can reach out to me via
 
-* **Email** - [b.gopikrishna@outlook.in](b.gopikrishna@outlook.in)
+* **Email** - [hi@gopikrishna.dev](mailto:hi@gopikrishna.dev)
 * **LinkedIn** - [bgopikrishna](https://www.linkedin.com/in/bgopikrishna)
 * **GitHub** - [bgopikrishna](https://github.com/bgopikrishna)
