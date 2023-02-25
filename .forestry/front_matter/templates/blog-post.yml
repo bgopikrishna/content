@@ -28,3 +28,4 @@ fields:
 pages:
 - blog/error-boundaries-in-react.md
 - blog/getting-started-with-webpack.md
+- blog/indexeddb-on-steroids-using-dexie.js.md
