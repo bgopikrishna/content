@@ -1,27 +1,27 @@
 ---
 draft: true
-date: 2023-02-27T17:00:00+05:30
+date: 2023-02-26T16:30:00+05:30
 title: IndexedDB on steroids using Dexie.js
 tags:
-- indexdb
+- IndexedDB
 description: Dexie.js provides a straightforward and simplified process of creating
   databases, storing data, updating data and database migrations, etc., over the top
   of indexDB.
-cover: "/uploads/cold-smooth-tasty.png"
+cover: "/uploads/stencil-facebook-cover.png"
 coverImageCredits: ''
 
 ---
 ## What is IndexedDB
 
-IndexedDB is a client-side, NoSQL database that allows web apps to store and retrieve data. As the data is stored locally in the browser, it's available even offline.
+IndexedDB is a client-side, NoSQL database that allows web apps to store and retrieve data. As the data is stored locally in the browser, it's available even offline. 
 
-The main advantage of indexedDB over local storage was we could even store files and blobs along with objects.
+The main advantage of indexedDB over local storage was we could even store files and blobs (like images, videos, etc.) along with objects.
 
 ## Dexie.js
 
-Working with low-level indexdDB directly is a lot of work. You can check out this [article](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) on MDN about using indexDB API directly.
+Working with low-level indexedDB API directly is a lot of work. You can check out this [article](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) on MDN about using indexedDB API directly. 
 
-[Dexie.js](https://dexie.org/) provides a straightforward and simplified process of creating databases, storing data, updating data and database migrations, etc., over the top of indexDB.
+To make things easier, [Dexie.js](https://dexie.org/) provides a straightforward and simplified process of creating databases, storing data, updating data and database migrations, etc., over the top of indexedDB.
 
 ## Using Dexie.js
 
@@ -69,7 +69,7 @@ Now open the html file using an HTTP server of your choice. I'm using the [Live 
 
 ![HTML boiler plate](/Users/gk/Documents/blog/uploads/dexiejs-boilerplate-html.png)
 
-For styling, we are using [Bulma](https://bulma.io/) CSS. Todos will be added using the input box. Nothing works now, as we still need to add the javascript.
+For styling, we are using [Bulma](https://bulma.io/) CSS. Todos will be added by typing in the input box. Nothing works now, as we still need to add the javascript.
 
 ### Adding Dexie.js
 
@@ -117,6 +117,8 @@ Now include both of them in the html file.
 </html>
 ```
 
+
+
 ### Capturing the user input
 
 In `main.js,` we will add event listeners to capture the user input.
@@ -134,6 +136,7 @@ formElement.addEventListener('submit', (e) => {
   
   todoInput.value = ''   // reset input
 });
+
 ```
 
 * `formElement` - Form where we receive user inputs to create a todo
@@ -144,7 +147,7 @@ Currently, on submitting the form, we are logging the to-do to the console. But 
 
 ### Creating a database and tables
 
-We can create an indexedDB database with dexie.js using.
+We can create an indexedDB database with dexie.js using. 
 
 ```javascript
 const db = new Dexie('databaseName')
@@ -164,10 +167,10 @@ You can maintain multiple versions of the database with the version number. It i
 When declaring columns
 
 * The first item will be the primary key.
-* `++` prefix makes it an auto-incremented primary key
+*  `++` prefix makes it an auto-incremented primary key
 * `&`  prefix makes it a unique column
 
-Let's create a database called `TodoDatabase`
+Let's create a database called `TodoDatabase` 
 
 We will store the todos in the `todo` table with the following columns.
 
@@ -196,11 +199,12 @@ formElement.addEventListener('submit', (e) => {
   // reset input
   todoInput.value = ''
 });
+
 ```
 
 ### Inserting into database
 
-Let's insert the todos into the `todo` table. We can insert the objects into the table using [Table.add()](https://dexie.org/docs/Table/Table.add()).
+Let's insert the todos into the `todo` table. Insert the objects into the table using [Table.add()](https://dexie.org/docs/Table/Table.add()).
 
 ```javascript
 const db = new Dexie('TodoDatabase');
@@ -235,25 +239,28 @@ formElement.addEventListener('submit', (e) => {
   // reset input
   todoInput.value = ''
 });
+
 ```
 
-On submitting the form, we pass the todo to the `createTodo` function.
+On submitting the form, we pass the todo to the `createTodo ` function.
 
-`createTodo` function inserts the new todo using `Table.add()` method. We don't need to pass the `id` as it's auto-incremented.
+`createTodo` function inserts the new todo using `Table.add()` method. We don't need to pass the `id` as it's auto-incremented. 
 
 Now if you add the todos, the new todos will be inserted into the `todo` table. You can check them in the dev tools.
 
-![IndexDB using dexie js in developer tools](/Users/gk/Documents/blog/uploads/Screenshot%202023-01-31%20at%2010.17.54%20PM.png)
+![IndexedDB using dexie js in developer tools](/Users/gk/Documents/blog/uploads/Screenshot%202023-01-31%20at%2010.17.54%20PM.png)
+
+
 
 ### Showing created todos on the UI
 
 Even though the todos are being created, they are not visible on the UI. To track the changes when they are being added, updated, or deleted and show them on the UI, we will use [liveQuery](https://dexie.org/docs/liveQuery()).
 
-If you pass `liveQuery`,  a database query callback like `Table.where` or `Table.toArray` . Whenever database changes like creation, updation, or deletion affect the result of your query, the passed callback will be called, and the result (the return value) is emitted by observable.
+ If you pass `liveQuery`,  a database query callback like `Table.where` or `Table.toArray` . Whenever database changes like creation, updation, or deletion affect the result of your query, the passed callback will be called, and the result (the return value) is emitted by observable. 
 
 Think of this like an event listener.
 
-Creating a to-do observable.
+ Creating a to-do observable to which we can subscribe and update the UI whenever todos are added or updated.
 
 ```javascript
 const todoObservable = Dexie.liveQuery(() => db.todo.toArray());
@@ -317,6 +324,7 @@ formElement.addEventListener('submit', (e) => {
 });
 
 
+
 ```
 
 When subscribing to the observable, we need to pass the `next` and `error` callback.
@@ -334,7 +342,7 @@ To mark the to-do as complete, the user clicks on the to-do item, and then the c
  db.todo.update(primaryKeyValue, dataToBeUpdated)
 ```
 
-Let's create a function called `toggleTodoCompleteStatus` which toggles the completed status of the to-do.
+Let's create a function called `toggleTodoCompleteStatus` which toggles the completed to-do status.
 
 ```javascript
 const db = new Dexie('TodoDatabase');
@@ -409,12 +417,19 @@ formElement.addEventListener('submit', (e) => {
 });
 
 
+
 ```
 
 We also attached this to the `onclick` method directly. The `toggleTodoCompleteStatus`  will take the to-do list HTML element and the completed status from the [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) property of the HTML element.
 
 All the changes are immediately reflected in the UI as we have already subscribed to `todoObservable`
 
-### Excersie
+### Exercise
 
-As small exercise, try to add delete todo functionality using [dexiejs docs](https://dexie.org/docs/).
+Till now, we learned how to create a database, create a table, add data, and update data. As a small exercise, add delete todo functionality which deletes the todo item from the database by finding the proper methods from [dexiejs docs](https://dexie.org/docs/).
+
+### Final Code
+
+
+
+<iframe src="https://replit.com/@bgopikrishna/DexieJS-Tutorial?embed=true" width="600" height="400" />
