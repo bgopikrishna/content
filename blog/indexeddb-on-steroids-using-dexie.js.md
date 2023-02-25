@@ -77,7 +77,7 @@ Create a javascript file named `main.js,` where we will write the business logic
 
 Now include both of them in the html file.
 
-```html
+```html {33-34}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -178,7 +178,7 @@ We will store the todos in the `todo` table with the following columns.
 * `name` - Name of the todo
 * `completed` - Todo status
 
-```javascript
+```javascript {1-9}
 const db = new Dexie('TodoDatabase');
 
 db.version(1).stores({
@@ -206,7 +206,7 @@ formElement.addEventListener('submit', (e) => {
 
 Let's insert the todos into the `todo` table. Insert the objects into the table using [Table.add()](https://dexie.org/docs/Table/Table.add()).
 
-```javascript
+```javascript {12-21, 28}
 const db = new Dexie('TodoDatabase');
 
 db.version(1).stores({
@@ -268,7 +268,7 @@ const todoObservable = Dexie.liveQuery(() => db.todo.toArray());
 
 Subscribing to the observable
 
-```javascript
+```javascript {23, 25-41}
 const db = new Dexie('TodoDatabase');
 
 db.version(1).stores({
@@ -344,7 +344,7 @@ To mark the to-do as complete, the user clicks on the to-do item, and then the c
 
 Let's create a function called `toggleTodoCompleteStatus` which toggles the completed to-do status.
 
-```javascript
+```javascript {26-39, 51}
 const db = new Dexie('TodoDatabase');
 
 db.version(1).stores({
