@@ -13,13 +13,13 @@ coverImageCredits: ''
 ---
 ## What is IndexedDB
 
-IndexedDB is a client-side, NoSQL database that allows web apps to store and retrieve data. As the data is stored locally in the browser, it's available even offline. 
+IndexedDB is a client-side, NoSQL database that allows web apps to store and retrieve data. As the data is stored locally in the browser, it's available even offline.
 
 The main advantage of indexedDB over local storage was we could even store files and blobs (like images, videos, etc.) along with objects.
 
 ## Dexie.js
 
-Working with low-level indexedDB API directly is a lot of work. You can check out this [article](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) on MDN about using indexedDB API directly. 
+Working with low-level indexedDB API directly is a lot of work. You can check out this [article](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) on MDN about using indexedDB API directly.
 
 To make things easier, [Dexie.js](https://dexie.org/) provides a straightforward and simplified process of creating databases, storing data, updating data and database migrations, etc., over the top of indexedDB.
 
@@ -67,7 +67,7 @@ Let's create an `index.html` file with the following contents.
 
 Now open the html file using an HTTP server of your choice. I'm using the [Live Server](https://github.com/ritwickdey/vscode-live-server) VS Code extension. You will see something like this.
 
-![HTML boiler plate](/Users/gk/Documents/blog/uploads/dexiejs-boilerplate-html.png)
+![HTML boiler plate](/uploads/dexiejs-boilerplate-html.png)
 
 For styling, we are using [Bulma](https://bulma.io/) CSS. Todos will be added by typing in the input box. Nothing works now, as we still need to add the javascript.
 
@@ -117,8 +117,6 @@ Now include both of them in the html file.
 </html>
 ```
 
-
-
 ### Capturing the user input
 
 In `main.js,` we will add event listeners to capture the user input.
@@ -136,7 +134,6 @@ formElement.addEventListener('submit', (e) => {
   
   todoInput.value = ''   // reset input
 });
-
 ```
 
 * `formElement` - Form where we receive user inputs to create a todo
@@ -147,7 +144,7 @@ Currently, on submitting the form, we are logging the to-do to the console. But 
 
 ### Creating a database and tables
 
-We can create an indexedDB database with dexie.js using. 
+We can create an indexedDB database with dexie.js using.
 
 ```javascript
 const db = new Dexie('databaseName')
@@ -167,10 +164,10 @@ You can maintain multiple versions of the database with the version number. It i
 When declaring columns
 
 * The first item will be the primary key.
-*  `++` prefix makes it an auto-incremented primary key
+* `++` prefix makes it an auto-incremented primary key
 * `&`  prefix makes it a unique column
 
-Let's create a database called `TodoDatabase` 
+Let's create a database called `TodoDatabase`
 
 We will store the todos in the `todo` table with the following columns.
 
@@ -199,7 +196,6 @@ formElement.addEventListener('submit', (e) => {
   // reset input
   todoInput.value = ''
 });
-
 ```
 
 ### Inserting into database
@@ -239,28 +235,25 @@ formElement.addEventListener('submit', (e) => {
   // reset input
   todoInput.value = ''
 });
-
 ```
 
-On submitting the form, we pass the todo to the `createTodo ` function.
+On submitting the form, we pass the todo to the `createTodo` function.
 
-`createTodo` function inserts the new todo using `Table.add()` method. We don't need to pass the `id` as it's auto-incremented. 
+`createTodo` function inserts the new todo using `Table.add()` method. We don't need to pass the `id` as it's auto-incremented.
 
 Now if you add the todos, the new todos will be inserted into the `todo` table. You can check them in the dev tools.
 
-![IndexedDB using dexie js in developer tools](/Users/gk/Documents/blog/uploads/Screenshot%202023-01-31%20at%2010.17.54%20PM.png)
-
-
+![IndexedDB using dexie js in developer tools](/uploads/screenshot-2023-01-31-at-10-17-54-pm.png)
 
 ### Showing created todos on the UI
 
 Even though the todos are being created, they are not visible on the UI. To track the changes when they are being added, updated, or deleted and show them on the UI, we will use [liveQuery](https://dexie.org/docs/liveQuery()).
 
- If you pass `liveQuery`,  a database query callback like `Table.where` or `Table.toArray` . Whenever database changes like creation, updation, or deletion affect the result of your query, the passed callback will be called, and the result (the return value) is emitted by observable. 
+If you pass `liveQuery`,  a database query callback like `Table.where` or `Table.toArray` . Whenever database changes like creation, updation, or deletion affect the result of your query, the passed callback will be called, and the result (the return value) is emitted by observable.
 
 Think of this like an event listener.
 
- Creating a to-do observable to which we can subscribe and update the UI whenever todos are added or updated.
+Creating a to-do observable to which we can subscribe and update the UI whenever todos are added or updated.
 
 ```javascript
 const todoObservable = Dexie.liveQuery(() => db.todo.toArray());
@@ -322,9 +315,6 @@ formElement.addEventListener('submit', (e) => {
   // reset input
   todoInput.value = ''
 });
-
-
-
 ```
 
 When subscribing to the observable, we need to pass the `next` and `error` callback.
@@ -415,21 +405,16 @@ formElement.addEventListener('submit', (e) => {
   // reset input
   todoInput.value = ''
 });
-
-
-
 ```
 
 We also attached this to the `onclick` method directly. The `toggleTodoCompleteStatus`  will take the to-do list HTML element and the completed status from the [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) property of the HTML element.
 
-All the changes are immediately reflected in the UI as we have already subscribed to `todoObservable`
+All the changes are immediately reflected in the UI, as we have already subscribed to `todoObservable`
 
 ### Exercise
 
 Till now, we learned how to create a database, create a table, add data, and update data. As a small exercise, add delete todo functionality which deletes the todo item from the database by finding the proper methods from [dexiejs docs](https://dexie.org/docs/).
 
 ### Final Code
-
-
 
 <iframe src="https://replit.com/@bgopikrishna/DexieJS-Tutorial?embed=true" width="600" height="400" />
