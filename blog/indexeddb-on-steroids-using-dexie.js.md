@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 date: 2023-02-26T16:30:00+05:30
 title: IndexedDB on steroids using Dexie.js
 tags:
@@ -11,7 +11,7 @@ cover: "/uploads/stencil-facebook-cover.png"
 coverImageCredits: ''
 
 ---
-## What is IndexedDB
+## What is IndexedDB?
 
 IndexedDB is a client-side, NoSQL database that allows web apps to store and retrieve data. As the data is stored locally in the browser, it's available even offline.
 
@@ -175,7 +175,7 @@ We will store the todos in the `todo` table with the following columns.
 * `name` - Name of the todo
 * `completed` - Todo status
 
-```javascript {1-9}
+```javascript {1-5}
 const db = new Dexie('TodoDatabase');
 
 db.version(1).stores({
@@ -417,4 +417,4 @@ Till now, we learned how to create a database, create a table, add data, and upd
 
 ### Final Code
 
-<iframe src="https://replit.com/@bgopikrishna/DexieJS-Tutorial?embed=true" width="600" height="400" />
+<iframe src="https://replit.com/@bgopikrishna/DexieJS-Tutorial?embed=true" width="100%" height="400" />
